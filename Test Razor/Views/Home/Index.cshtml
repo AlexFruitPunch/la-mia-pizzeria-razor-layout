@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    using System.Globalization;
 }
 
 <div class="text-center">
@@ -71,4 +72,18 @@ Stampare dentro uno span il risultato.</p>
 
 <p>Data: @dataOggi.Year - @dataOggi.Month - @dataOggi.Day / Ore: @dataOggi.Hour:@dataOggi.Minute:@dataOggi.Second </p>
 
-<p>6. Stampare in pagina la data e l'ora attuale (usando la classe DateTime) con il formato anno-mese-giorno ore:minuti:secondi</p>
+<p>6.  Partendo dalla data di oggi (usando la classe DateTime) stampare in pagina</p>
+<p>a.  la data di 7 giorni fa</p>
+
+
+@{
+    dataOggi = dataOggi.AddDays(-7);
+}
+
+<p>Data: @dataOggi.Year - @dataOggi.Month - @dataOggi.Day / Ore: @dataOggi.Hour:@dataOggi.Minute:@dataOggi.Second </p>
+
+<p>b.che giorno della settimana è oggi (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...)</p>
+
+@{
+    Console.WriteLine(dataOggi.ToString("ddd",new CultureInfo("fr-FR")));
+}
