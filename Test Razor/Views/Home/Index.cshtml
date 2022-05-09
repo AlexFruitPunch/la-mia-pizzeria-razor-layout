@@ -62,3 +62,13 @@ Stampare dentro uno span il risultato.</p>
             }
         </ul>
     }
+
+<p>5. Stampare in pagina la data e l'ora attuale (usando la classe DateTime) con il formato anno-mese-giorno ore:minuti:secondi</p>
+
+@{
+    DateTime dataOggi = DateTime.Now;
+}
+
+<p>Data: @dataOggi.Year - @dataOggi.Month - @dataOggi.Day / Ore: @dataOggi.Hour:@dataOggi.Minute:@dataOggi.Second </p>
+
+<p>6. Stampare in pagina la data e l'ora attuale (usando la classe DateTime) con il formato anno-mese-giorno ore:minuti:secondi</p>
