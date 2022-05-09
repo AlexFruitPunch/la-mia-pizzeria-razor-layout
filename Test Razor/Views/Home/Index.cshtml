@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<p>1. Dichiarare una variabile valorizzandola con il nostro nome.
+Dichiarare un'altra variabile valorizzandola con il nostro cognome.
+Stampare il nostro nome e cognome all'interno di un tag h2. </p>
+
+@{
+    string nome = "alessandro";
+    string cognome = "pagani";
+}
+
+<h2>nome: @nome - cognome: @cognome</h2>
+
+<p>2. Creare una funzione che stampa la somma dei numeri che vanno da 1 a n (con n passato come parametro - n incluso)
+Stampare dentro uno span il risultato.</p>
+
+@{
+    int n = 7;
+    int somma = 1;
+}
+
+@for(int i = 0; i <= n; i++){
+    somma += i;
+}
+
+<span>Risultato somma = @somma</span>
+
+<p>Contare quante volte la lettera 'a' è presente nalla frase "nel mezzo del cammin di nostra vita" e stampare questo valore in pagina</p>
+
+@{
+    string fraseDaContare = "nel mezzo del cammin di nostra vita";
+    char lettera = 'a';
+    int contatore = fraseDaContare.Count(f => (f == lettera));        
+}
+
+<span>Numero di volte in cui "a" è presente nella frase è: @contatore</span> 
