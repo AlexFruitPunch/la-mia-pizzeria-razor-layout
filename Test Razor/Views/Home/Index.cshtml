@@ -32,7 +32,7 @@ Stampare dentro uno span il risultato.</p>
 
 <span>Risultato somma = @somma</span>
 
-<p>Contare quante volte la lettera 'a' è presente nalla frase "nel mezzo del cammin di nostra vita" e stampare questo valore in pagina</p>
+<p>3. Contare quante volte la lettera 'a' è presente nalla frase "nel mezzo del cammin di nostra vita" e stampare questo valore in pagina</p>
 
 @{
     string fraseDaContare = "nel mezzo del cammin di nostra vita";
@@ -41,3 +41,24 @@ Stampare dentro uno span il risultato.</p>
 }
 
 <span>Numero di volte in cui "a" è presente nella frase è: @contatore</span> 
+
+<p>4. Creare una List<int> di 20 numeri interi (generati random da 1 a 90, 1 e 90 inclusi) e mostrare in pagina solo i numeri compresi tra 20 e 70</p>
+
+@{
+    List<int> listaNumInteri = new List<int>();
+    Random rndm = new Random();
+    for (int i=0; i<20; i++)
+    {
+        listaNumInteri.Add(rndm.Next(1, 91));
+    }
+}
+
+<p>Numeri compresi tra 20 e 70</p>
+    @foreach (int lista in listaNumInteri)
+    {
+        <ul>
+            @if(lista > 20 && lista < 70){
+            <li>Numero: @lista</li>
+            }
+        </ul>
+    }
